@@ -174,7 +174,7 @@ include __DIR__ . '/../src/cabecalho_publico.php';
     <div class="produtos">
     <?php if (mysqli_num_rows($resultado) > 0): ?>
         <?php while($produto = mysqli_fetch_assoc($resultado)): ?>
-            <div class="produto" onclick="window.location='produto.php?id=<?php echo (int)$produto['id']; ?>'">
+            <div class="produto">
                 <?php
                     $caminho_imagem = "assets/imagens/categorias/default.png";
 
@@ -197,13 +197,10 @@ include __DIR__ . '/../src/cabecalho_publico.php';
                     }
                 ?>
                 <img src="<?php echo $caminho_imagem; ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>">
-
                 <h2><?php echo htmlspecialchars($produto['nome']); ?></h2>
-                <p><strong>Categoria:</strong> <?php echo htmlspecialchars($produto['categoria'] ?? 'Sem categoria'); ?></p>
+                <p class="card-categoria"><?php echo htmlspecialchars($produto['categoria'] ?? 'Sem categoria'); ?></p>
+                <p class="card-descricao"><?php echo htmlspecialchars(substr($produto['descricao'], 0, 60)) . (strlen($produto['descricao']) > 60 ? '...' : ''); ?></p>
                 <p class="preco">R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></p>
-                <p><?php echo nl2br(htmlspecialchars(substr($produto['descricao'], 0, 80)) . (strlen($produto['descricao']) > 80 ? '...' : '')); ?></p>
-                <p class="estoque-catalogo"><strong>Estoque:</strong> <?php echo htmlspecialchars($produto['estoque']); ?></p>
-                <a href="produto.php?id=<?php echo (int)$produto['id']; ?>" class="btn-ver-detalhes">Ver detalhes →</a>
             </div>
         <?php endwhile; ?>
     <?php else: ?>

@@ -205,50 +205,55 @@ form.catalogo-filter-form {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* Botão "Ver detalhes" nos cards */
-.btn-ver-detalhes {
-    display: block;
-    margin-top: 14px;
-    padding: 10px 0;
-    background: linear-gradient(135deg, var(--candy) 0%, var(--candy-dark) 100%);
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    letter-spacing: 0.3px;
-    box-shadow: 0 3px 10px var(--candy-shadow);
-    transition: all 0.3s ease;
-}
-
-.btn-ver-detalhes:hover {
-    background: linear-gradient(135deg, var(--candy-dark) 0%, #a0243c 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 14px var(--candy-shadow);
-    text-decoration: none !important;
-}
-
 /* =============================== */
-/* HOVER NOS CARDS DE PRODUTOS */
+/* CARDS DE PRODUTOS — COMPACTOS */
 /* =============================== */
+
+/* Grid com mais colunas */
+.produtos {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
 
 .produto {
+    padding: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    cursor: default;
 }
 
 .produto:hover {
-    transform: translateY(-8px);
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.13);
 }
 
 .produto img {
+    height: 120px;
     transition: transform 0.3s ease;
 }
 
 .produto:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
+}
+
+.produto h2 {
+    font-size: 15px !important;
+    min-height: auto;
+    margin-bottom: 4px;
+}
+
+.card-categoria {
+    font-size: 12px !important;
+    color: var(--candy);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 6px 0;
+}
+
+.card-descricao {
+    font-size: 12px !important;
+    color: #7f8c8d;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
 }
 
 /* Ajuste do preço para responder ao sistema de acessibilidade */
@@ -366,15 +371,13 @@ body.dark-mode .produto:hover {
     box-shadow: 0px 8px 20px rgba(0,0,0,0.8);
 }
 
-/* Botão Ver Detalhes - Dark Mode */
-body.dark-mode .btn-ver-detalhes {
-    background: linear-gradient(135deg, #c4304e 0%, #a0243c 100%);
-    box-shadow: 0 3px 10px rgba(196, 48, 78, 0.5);
+/* Card categoria - Dark Mode */
+body.dark-mode .card-categoria {
+    color: #f06080;
 }
 
-body.dark-mode .btn-ver-detalhes:hover {
-    background: linear-gradient(135deg, #a0243c 0%, #7d1a2d 100%);
-    box-shadow: 0 5px 14px rgba(196, 48, 78, 0.6);
+body.dark-mode .card-descricao {
+    color: #adb5bd;
 }
 
 /* Formulário filtros - Dark Mode ajustes candy */
