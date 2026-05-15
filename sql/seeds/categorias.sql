@@ -1,9 +1,15 @@
--- Categorias extras para a Distribuidora Estrela Real
--- Execute APÓS o criando_bases.sql (as 3 primeiras categorias já existem: Balas, Chocolates, Pirulitos)
+-- ============================================================
+-- Categorias da Distribuidora Estrela Real
+-- Execute APÓS 001_schema.sql
+-- ============================================================
 
-INSERT INTO categorias (nome, ativo) VALUES ('Gomas e Gelatinas', 1);  -- id 4
-INSERT INTO categorias (nome, ativo) VALUES ('Caramelos', 1);           -- id 5
-INSERT INTO categorias (nome, ativo) VALUES ('Bombons', 1);             -- id 6
-INSERT INTO categorias (nome, ativo) VALUES ('Biscoitos e Bolachas', 1); -- id 7
-INSERT INTO categorias (nome, ativo) VALUES ('Marshmallows', 1);        -- id 8
-INSERT INTO categorias (nome, ativo) VALUES ('Drágeas e Confeitos', 1); -- id 9
+INSERT INTO categorias (nome) VALUES
+('Balas'),           -- id 1
+('Chocolates'),      -- id 2
+('Pirulitos'),       -- id 3
+('Gomas e Gelatinas'), -- id 4
+('Caramelos'),       -- id 5
+('Bombons'),         -- id 6
+('Biscoitos e Bolachas'), -- id 7
+('Marshmallows'),    -- id 8
+('Drágeas e Confeitos'); -- id 9
