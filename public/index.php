@@ -92,45 +92,59 @@ function gerar_link_ordem($coluna, $texto, $ordem_atual, $direcao_atual) {
 </head>
 <body>
 
-<form method="GET" class="index-filter-form"> <div class="form-row">
-        <label for="busca">Buscar por nome:</label>
-        <input type="text" name="busca" id="busca" value="<?php echo htmlspecialchars($busca); ?>">
+<form method="GET" class="index-filter-form">
+    <div class="filter-row-1">
+        <div class="form-field">
+            <label for="busca">Buscar por nome:</label>
+            <input type="text" name="busca" id="busca" placeholder="Digite o nome..." value="<?php echo htmlspecialchars($busca); ?>">
+        </div>
+        <div class="form-field">
+            <label for="categoria_id">Categoria:</label>
+            <select name="categoria_id" id="categoria_id">
+                <option value="">Todas as categorias</option>
+                <?php
+                $categorias = $conn->query("SELECT * FROM categorias ORDER BY nome ASC");
+                while ($cat = $categorias->fetch_assoc()) {
+                    $selecionado = ($categoria_id == $cat['id']) ? 'selected' : '';
+                    echo "<option value='{$cat['id']}' $selecionado>" . htmlspecialchars($cat['nome']) . "</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <div class="form-field">
+            <label for="filtro_status">Status do Estoque:</label>
+            <select name="filtro_status" id="filtro_status">
+                <option value="" <?php if ($filtro_status === '') echo 'selected'; ?>>Todos</option>
+                <option value="ok" <?php if ($filtro_status === 'ok') echo 'selected'; ?>>✅ Estoque Ok</option>
+                <option value="baixo" <?php if ($filtro_status === 'baixo') echo 'selected'; ?>>⚠️ Estoque Baixo</option>
+                <option value="zerado" <?php if ($filtro_status === 'zerado') echo 'selected'; ?>>❌ Esgotado</option>
+            </select>
+        </div>
     </div>
-
-    <div class="form-row">
-        <label for="categoria_id">Categoria:</label>
-        <select name="categoria_id" id="categoria_id">
-            <option value="">Todas as categorias</option>
-            <?php
-            $categorias = $conn->query("SELECT * FROM categorias ORDER BY nome ASC");
-            while ($cat = $categorias->fetch_assoc()) {
-                $selecionado = ($categoria_id == $cat['id']) ? 'selected' : '';
-                echo "<option value='{$cat['id']}' $selecionado>" . htmlspecialchars($cat['nome']) . "</option>";
-            }
-            ?>
-        </select>
-    </div>
-
-    <div class="form-row linha-horizontal"> <input type="number" name="preco_min" step="0.01" placeholder="Preço mín." value="<?php echo $preco_min; ?>">
-        <input type="number" name="preco_max" step="0.01" placeholder="Preço máx." value="<?php echo $preco_max; ?>">
-    </div>
-
-    <div class="form-row linha-horizontal"> <input type="number" name="estoque_min" placeholder="Estoque mín." value="<?php echo $estoque_min; ?>">
-        <input type="number" name="estoque_max" placeholder="Estoque máx." value="<?php echo $estoque_max; ?>">
-    </div>
-
-    <div class="form-row">
-        <label for="filtro_status">Status do Estoque:</label>
-        <select name="filtro_status" id="filtro_status">
-            <option value="" <?php if ($filtro_status === '') echo 'selected'; ?>>Todos</option>
-            <option value="ok" <?php if ($filtro_status === 'ok') echo 'selected'; ?>>✅ Estoque Ok</option>
-            <option value="baixo" <?php if ($filtro_status === 'baixo') echo 'selected'; ?>>⚠️ Estoque Baixo</option>
-            <option value="zerado" <?php if ($filtro_status === 'zerado') echo 'selected'; ?>>❌ Esgotado</option>
-        </select>
-    </div>
-
-    <div class="form-row form-buttons-row"> <input type="submit" value="Filtrar Produtos">
-        <a href="index.php" style="margin-left: 10px;">Limpar Filtros</a>
+    <div class="filter-row-2">
+        <div class="form-field">
+            <label for="preco_min">Preço mín:</label>
+            <input type="number" name="preco_min" id="preco_min" step="0.01" placeholder="R$ 0,00" value="<?php echo $preco_min; ?>">
+        </div>
+        <div class="form-field">
+            <label for="preco_max">Preço máx:</label>
+            <input type="number" name="preco_max" id="preco_max" step="0.01" placeholder="R$ 999,99" value="<?php echo $preco_max; ?>">
+        </div>
+        <div class="form-field">
+            <label for="estoque_min">Estoque mín:</label>
+            <input type="number" name="estoque_min" id="estoque_min" placeholder="0" value="<?php echo $estoque_min; ?>">
+        </div>
+        <div class="form-field">
+            <label for="estoque_max">Estoque máx:</label>
+            <input type="number" name="estoque_max" id="estoque_max" placeholder="999" value="<?php echo $estoque_max; ?>">
+        </div>
+        <div class="form-field form-buttons-field">
+            <label>&nbsp;</label>
+            <div class="form-buttons-row">
+                <input type="submit" value="Filtrar">
+                <a href="index.php">Limpar</a>
+            </div>
+        </div>
     </div>
 </form>
 

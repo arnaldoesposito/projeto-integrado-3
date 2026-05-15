@@ -288,7 +288,7 @@ body.dark-mode .index-filter-form::before {
     border-bottom-color: #4a90e2;
 }
 
-body.dark-mode .index-filter-form .form-row label {
+body.dark-mode .index-filter-form .form-field label {
     color: #e0e0e0;
 }
 
@@ -311,8 +311,8 @@ body.dark-mode .index-filter-form input::placeholder {
     color: #7a7a7a;
 }
 
-body.dark-mode .index-filter-form .form-buttons-row {
-    border-top-color: #404040;
+body.dark-mode .index-filter-form .filter-row-2 {
+    border-top-color: #334155;
 }
 
 body.dark-mode .index-filter-form input[type="submit"] {

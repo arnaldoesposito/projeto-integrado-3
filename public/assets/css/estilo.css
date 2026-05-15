@@ -510,15 +510,16 @@ body.login {
 /* Estilos específicos para a listagem e filtros */
 /* =============================== */
 
-/* Container principal dos filtros - Compacto e Moderno */
+/* Container principal dos filtros - Largo e compacto */
 form.index-filter-form {
-    max-width: 600px;
-    margin: 20px auto 30px auto;
+    width: 100%;
+    margin: 20px 0 30px 0;
     background: #ffffff;
-    padding: 20px;
+    padding: 20px 24px;
     border-radius: 12px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
     border: 1px solid #e2e8f0;
+    box-sizing: border-box;
 }
 
 /* Título dos filtros */
@@ -533,12 +534,31 @@ form.index-filter-form {
     border-bottom: 2px solid #3b82f6;
 }
 
-/* Grid responsivo para organizar os campos */
-.index-filter-form .form-row {
+/* Linha 1: Busca (2x) | Categoria | Status */
+.index-filter-form .filter-row-1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 15px;
     margin-bottom: 12px;
 }
 
-.index-filter-form .form-row label {
+/* Linha 2: 4 campos numéricos + botões */
+.index-filter-form .filter-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Cada campo individualmente */
+.index-filter-form .form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.index-filter-form .form-field label {
     font-size: 13px;
     font-weight: 600;
     color: #34495e;
@@ -546,7 +566,7 @@ form.index-filter-form {
     display: block;
 }
 
-/* Estilo moderno para inputs e selects */
+/* Inputs e selects */
 .index-filter-form input[type="text"],
 .index-filter-form input[type="number"],
 .index-filter-form select {
@@ -557,47 +577,41 @@ form.index-filter-form {
     font-size: 14px;
     transition: all 0.3s ease;
     background-color: #ffffff;
+    box-sizing: border-box;
 }
 
 .index-filter-form input[type="text"]:focus,
 .index-filter-form input[type="number"]:focus,
 .index-filter-form select:focus {
     border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(52,152,219,0.1);
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
     outline: none;
     transform: translateY(-1px);
 }
 
-/* Estilo para as linhas com inputs pares */
-.index-filter-form .linha-horizontal {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+/* Área de botões alinhada ao fundo */
+.index-filter-form .form-buttons-field {
+    min-width: 170px;
 }
 
-/* Área de botões */
 .index-filter-form .form-buttons-row {
-    margin-top: 18px;
-    padding-top: 18px;
-    border-top: 1px solid #dee2e6;
     display: flex;
-    gap: 10px;
-    justify-content: center;
+    gap: 8px;
 }
 
-/* Botão Filtrar - com gradiente */
+/* Botão Filtrar */
 .index-filter-form input[type="submit"] {
     background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
     color: white;
     border: none;
-    padding: 10px 28px;
+    padding: 10px 20px;
     border-radius: 6px;
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(52,152,219,0.3);
     transition: all 0.3s ease;
-    margin-right: 0;
+    white-space: nowrap;
 }
 
 .index-filter-form input[type="submit"]:hover {
@@ -606,16 +620,17 @@ form.index-filter-form {
     box-shadow: 0 6px 14px rgba(52,152,219,0.4);
 }
 
-/* Link "Limpar Filtros" - destaque vermelho */
+/* Link Limpar */
 .index-filter-form a {
     color: #e74c3c;
     text-decoration: none;
     font-weight: 600;
-    padding: 10px 24px;
+    padding: 10px 16px;
     border-radius: 6px;
     transition: all 0.3s ease;
     font-size: 14px;
     background-color: rgba(231,76,60,0.1);
+    white-space: nowrap;
 }
 
 .index-filter-form a:hover {
@@ -623,7 +638,7 @@ form.index-filter-form {
     transform: translateY(-1px);
 }
 
-/* Placeholders estilizados */
+/* Placeholders */
 .index-filter-form input::placeholder {
     color: #95a5a6;
     font-style: italic;
@@ -633,18 +648,17 @@ form.index-filter-form {
 @media (max-width: 768px) {
     .index-filter-form {
         padding: 15px;
-        max-width: 95%;
     }
-    
-    .index-filter-form .linha-horizontal {
+
+    .index-filter-form .filter-row-1,
+    .index-filter-form .filter-row-2 {
         grid-template-columns: 1fr;
-        gap: 10px;
     }
-    
+
     .index-filter-form .form-buttons-row {
         flex-direction: column;
     }
-    
+
     .index-filter-form input[type="submit"],
     .index-filter-form a {
         width: 100%;
