@@ -1,3 +1,11 @@
+/* Paleta candy para o catálogo público */
+:root {
+    --candy: #e84060;
+    --candy-dark: #c4304e;
+    --candy-light: rgba(232, 64, 96, 0.1);
+    --candy-shadow: rgba(232, 64, 96, 0.3);
+}
+
 /* =============================== */
 /* ESTILOS PARA CABEÇALHO PÚBLICO */
 /* Usado em páginas sem autenticação */
@@ -62,7 +70,7 @@ form.catalogo-filter-form {
     color: #2c3e50;
     margin-bottom: 18px;
     padding-bottom: 12px;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid var(--candy);
 }
 
 /* Form rows */
@@ -128,7 +136,7 @@ form.catalogo-filter-form {
 }
 
 .catalogo-filter-form input[type="submit"] {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    background: linear-gradient(135deg, var(--candy) 0%, var(--candy-dark) 100%);
     color: white;
     border: none;
     padding: 12px 30px;
@@ -136,14 +144,14 @@ form.catalogo-filter-form {
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(52,152,219,0.3);
+    box-shadow: 0 4px 10px var(--candy-shadow);
     transition: all 0.3s ease;
 }
 
 .catalogo-filter-form input[type="submit"]:hover {
-    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    background: linear-gradient(135deg, var(--candy-dark) 0%, #a0243c 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(52,152,219,0.4);
+    box-shadow: 0 6px 14px var(--candy-shadow);
 }
 
 .catalogo-filter-form a {
@@ -180,7 +188,7 @@ form.catalogo-filter-form {
 }
 
 .contador-resultados strong {
-    color: #3498db;
+    color: var(--candy);
     font-size: 17px;
 }
 
@@ -195,6 +203,30 @@ form.catalogo-filter-form {
     margin: 20px auto;
     max-width: 600px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Botão "Ver detalhes" nos cards */
+.btn-ver-detalhes {
+    display: block;
+    margin-top: 14px;
+    padding: 10px 0;
+    background: linear-gradient(135deg, var(--candy) 0%, var(--candy-dark) 100%);
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.3px;
+    box-shadow: 0 3px 10px var(--candy-shadow);
+    transition: all 0.3s ease;
+}
+
+.btn-ver-detalhes:hover {
+    background: linear-gradient(135deg, var(--candy-dark) 0%, #a0243c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px var(--candy-shadow);
+    text-decoration: none !important;
 }
 
 /* =============================== */
@@ -332,4 +364,34 @@ body.dark-mode .produtos > p {
 /* Hover nos cards - Dark Mode */
 body.dark-mode .produto:hover {
     box-shadow: 0px 8px 20px rgba(0,0,0,0.8);
+}
+
+/* Botão Ver Detalhes - Dark Mode */
+body.dark-mode .btn-ver-detalhes {
+    background: linear-gradient(135deg, #c4304e 0%, #a0243c 100%);
+    box-shadow: 0 3px 10px rgba(196, 48, 78, 0.5);
+}
+
+body.dark-mode .btn-ver-detalhes:hover {
+    background: linear-gradient(135deg, #a0243c 0%, #7d1a2d 100%);
+    box-shadow: 0 5px 14px rgba(196, 48, 78, 0.6);
+}
+
+/* Formulário filtros - Dark Mode ajustes candy */
+body.dark-mode .catalogo-filter-form::before {
+    border-bottom-color: #c4304e;
+}
+
+body.dark-mode .catalogo-filter-form input[type="submit"] {
+    background: linear-gradient(135deg, #c4304e 0%, #a0243c 100%);
+    box-shadow: 0 4px 10px rgba(196, 48, 78, 0.5);
+}
+
+body.dark-mode .catalogo-filter-form input[type="submit"]:hover {
+    background: linear-gradient(135deg, #a0243c 0%, #7d1a2d 100%);
+    box-shadow: 0 6px 14px rgba(196, 48, 78, 0.6);
+}
+
+body.dark-mode .contador-resultados strong {
+    color: #f06080;
 }

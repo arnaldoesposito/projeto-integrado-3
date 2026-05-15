@@ -174,9 +174,8 @@ include __DIR__ . '/../src/cabecalho_publico.php';
     <div class="produtos">
     <?php if (mysqli_num_rows($resultado) > 0): ?>
         <?php while($produto = mysqli_fetch_assoc($resultado)): ?>
-            <div class="produto">
+            <div class="produto" onclick="window.location='produto.php?id=<?php echo (int)$produto['id']; ?>'">
                 <?php
-                    // Lógica para exibir a imagem (produto ou categoria padrão)
                     $caminho_imagem = "assets/imagens/categorias/default.png";
 
                     if (!empty($produto['imagem'])) {
@@ -197,15 +196,15 @@ include __DIR__ . '/../src/cabecalho_publico.php';
                         }
                     }
                 ?>
-                <img src="<?php echo $caminho_imagem; ?>" alt="Imagem do Produto">
+                <img src="<?php echo $caminho_imagem; ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>">
 
                 <h2><?php echo htmlspecialchars($produto['nome']); ?></h2>
                 <p><strong>Categoria:</strong> <?php echo htmlspecialchars($produto['categoria'] ?? 'Sem categoria'); ?></p>
                 <p class="preco">R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></p>
-                 <p><?php echo nl2br(htmlspecialchars(substr($produto['descricao'], 0, 100)) . (strlen($produto['descricao']) > 100 ? '...' : '')); ?></p>
-
-                 <p class="estoque-catalogo"><strong>Estoque:</strong> <?php echo htmlspecialchars($produto['estoque']); ?></p>
-                 </div>
+                <p><?php echo nl2br(htmlspecialchars(substr($produto['descricao'], 0, 80)) . (strlen($produto['descricao']) > 80 ? '...' : '')); ?></p>
+                <p class="estoque-catalogo"><strong>Estoque:</strong> <?php echo htmlspecialchars($produto['estoque']); ?></p>
+                <a href="produto.php?id=<?php echo (int)$produto['id']; ?>" class="btn-ver-detalhes">Ver detalhes →</a>
+            </div>
         <?php endwhile; ?>
     <?php else: ?>
         <p>Nenhum produto encontrado com os filtros aplicados.</p>
