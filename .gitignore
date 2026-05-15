@@ -1,0 +1,8 @@
+.env
+.claude/
+
+# Imagens enviadas por usuários (não persistem no Railway)
+/public/assets/imagens/*
+!/public/assets/imagens/categorias/
+/public/assets/imagens/categorias/*
+!/public/assets/imagens/categorias/.gitkeep

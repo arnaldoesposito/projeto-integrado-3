@@ -1,0 +1,1552 @@
+/* =============================== */
+/* Estilos Gerais */
+/* Aplicados em todo o sistema */
+/* =============================== */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #2c3e50;
+    margin: 0;
+    padding-top: 180px; /* Ajustado: 60px (barra acessibilidade) + 120px (header com menu) */
+}
+
+h1, h2 {
+    color: #2c3e50;
+    margin-left: 0; /* Centralizado */
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Links "Voltar" - estilo de botão */
+a.btn-voltar,
+.conteudo > a:not(table a) {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 24px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+a.btn-voltar:hover,
+.conteudo > a:not(table a):hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(108,117,125,0.3);
+    text-decoration: none;
+}
+
+/* Estilos gerais para inputs, selects e textareas */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+/* Focus nos campos */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52,152,219,0.1);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+/* Estilo geral para labels */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #34495e;
+    font-size: 13px;
+}
+
+/* Estilo geral para botões submit */
+input[type="submit"],
+button[type="submit"] {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: none;
+    padding: 11px 28px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-right: 10px;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(52,152,219,0.3);
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(52,152,219,0.4);
+}
+
+
+/* =============================== */
+/* Layout: Cabeçalho Fixo */
+/* Estilos aplicados no topo do layout */
+/* =============================== */
+
+.topo {
+    position: fixed;
+    top: 60px; /* Posicionado abaixo da barra de acessibilidade */
+    left: 0;
+    right: 0;
+    /* Gradiente sutil de azul escuro */
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 20px 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.3); /* Sombra mais pronunciada */
+    border-bottom: 3px solid #3498db; /* Borda azul no bottom */
+}
+
+
+.topo-conteudo {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 5%; /* Padding lateral responsivo */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topo-esquerda {
+    display: flex;
+    flex-direction: column;
+}
+
+.topo .titulo {
+    font-size: 26px;
+    font-weight: 700; /* Mais bold */
+    margin-bottom: 10px;
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Sombra no texto */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Ícone decorativo antes do título (opcional) */
+.topo .titulo::before {
+    content: '🍬'; /* Emoji de doce */
+    font-size: 28px;
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.4));
+}
+
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Gap um pouco maior */
+}
+
+.menu a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500; /* Semi-bold */
+    font-size: 15px;
+    padding: 8px 16px; /* Padding para área clicável */
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu a:hover {
+    background-color: rgba(255,255,255,0.1); /* Fundo sutil no hover */
+    color: #3498db; /* Azul claro no hover */
+    transform: translateY(-2px); /* Levanta um pouco */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Linha decorativa embaixo do link ativo/hover */
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 80%;
+    height: 2px;
+    background-color: #3498db;
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+
+.usuario {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    min-width: 180px;
+    white-space: nowrap;
+}
+
+.usuario span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #ecf0f1;
+}
+
+.usuario a.sair {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0px 3px 8px rgba(231,76,60,0.4);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    display: inline-block;
+    text-align: center;
+}
+
+.usuario a.sair:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    box-shadow: 0px 6px 12px rgba(231,76,60,0.6);
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.2);
+}
+
+
+/* Responsive para telas menores - Cabeçalho */
+@media (max-width: 600px) {
+    body {
+        padding-top: 220px; /* Mais espaço para mobile onde o header quebra */
+    }
+    
+    .topo-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .usuario {
+        align-items: flex-start;
+        margin-top: 15px;
+        min-width: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .usuario span {
+        text-align: left;
+    }
+}
+
+
+/* =============================== */
+/* Layout: Área de Conteúdo Principal */
+/* Estilo do container principal abaixo do cabeçalho */
+/* =============================== */
+
+.conteudo {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto; /* Espaço superior e centralização */
+    padding: 0 5%; /* Padding lateral responsivo */
+    box-sizing: border-box;
+}
+
+
+/* =============================== */
+/* Estilos de Formulário (Padrão) */
+/* Estilos para formulários em geral (cadastro, edição, etc.) */
+/* =============================== */
+
+/* Estilo geral para blocos de formulário - Modernizado */
+form {
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 600px; /* Compacto como os filtros */
+    margin: 0 auto 20px auto; /* Centraliza */
+    border: none;
+}
+
+/* Estilo para cada linha (div.form-row) dentro de QUALQUER formulário */
+form .form-row {
+    margin-bottom: 15px; /* Espaçamento padrão entre as linhas do formulário */
+}
+
+/* A última linha (botões) tem um espaçamento diferente */
+form .form-buttons-row {
+    margin-top: 20px; /* Espaço antes dos botões */
+    padding-top: 18px;
+    border-top: 1px solid #dee2e6;
+    text-align: center; /* Centraliza botões */
+}
+
+
+/* =============================== */
+/* Página: Login (login.php) */
+/* Estilos específicos para a tela de login */
+/* =============================== */
+
+/* =============================== */
+/* Página de Login */
+/* Visual limpo e profissional */
+/* =============================== */
+
+body.login {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    overflow: auto;
+}
+
+.login-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    margin: 20px;
+    box-sizing: border-box;
+    border: 1px solid #e9ecef;
+}
+
+.login-box h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.login-subtitulo {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 0 0 30px 0;
+    text-align: center;
+    font-weight: 500;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* Mensagem de erro */
+.login-erro {
+    background-color: #fee;
+    border: 2px solid #e74c3c;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    color: #e74c3c;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Formulário */
+.login-form {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+.login-form label:first-of-type {
+    margin-top: 0;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: none;
+}
+
+.btn-entrar {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    margin-top: 20px;
+}
+
+.btn-entrar:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+}
+
+.link-voltar {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.link-voltar:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Compatibilidade com mensagens antigas */
+.erro {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* =============================== */
+/* Página: Index (index.php) */
+/* Estilos específicos para a listagem e filtros */
+/* =============================== */
+
+/* Container principal dos filtros - Compacto e Moderno */
+form.index-filter-form {
+    max-width: 600px; /* Compacto */
+    margin: 20px auto 30px auto; /* Centralizado */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: none;
+}
+
+/* Título dos filtros */
+.index-filter-form::before {
+    content: '🔍 Filtros de Busca';
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #3498db;
+}
+
+/* Grid responsivo para organizar os campos */
+.index-filter-form .form-row {
+    margin-bottom: 12px;
+}
+
+.index-filter-form .form-row label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Estilo moderno para inputs e selects */
+.index-filter-form input[type="text"],
+.index-filter-form input[type="number"],
+.index-filter-form select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+.index-filter-form input[type="text"]:focus,
+.index-filter-form input[type="number"]:focus,
+.index-filter-form select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52,152,219,0.1);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+/* Estilo para as linhas com inputs pares */
+.index-filter-form .linha-horizontal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Área de botões */
+.index-filter-form .form-buttons-row {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Botão Filtrar - com gradiente */
+.index-filter-form input[type="submit"] {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(52,152,219,0.3);
+    transition: all 0.3s ease;
+    margin-right: 0;
+}
+
+.index-filter-form input[type="submit"]:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(52,152,219,0.4);
+}
+
+/* Link "Limpar Filtros" - destaque vermelho */
+.index-filter-form a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    background-color: rgba(231,76,60,0.1);
+}
+
+.index-filter-form a:hover {
+    background-color: rgba(231,76,60,0.2);
+    transform: translateY(-1px);
+}
+
+/* Placeholders estilizados */
+.index-filter-form input::placeholder {
+    color: #95a5a6;
+    font-style: italic;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+    .index-filter-form {
+        padding: 15px;
+        max-width: 95%;
+    }
+    
+    .index-filter-form .linha-horizontal {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .index-filter-form .form-buttons-row {
+        flex-direction: column;
+    }
+    
+    .index-filter-form input[type="submit"],
+    .index-filter-form a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Estilos da Tabela na Página Index - Modernizada e Centralizada */
+
+/* Container da tabela centralizado */
+.conteudo > table,
+.conteudo > a + table {
+    max-width: 95%;
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: visible;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: visible;
+}
+
+/* Cabeçalho da tabela - ESTILO FORTE */
+thead th,
+table > thead > tr > th,
+table th {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 14px 12px !important;
+    text-align: left;
+    border: none !important;
+    position: relative;
+    z-index: 10;
+}
+
+/* Links no cabeçalho da tabela - sempre brancos */
+thead th a,
+table > thead > tr > th a,
+table th a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+thead th a:hover,
+table > thead > tr > th a:hover,
+table th a:hover {
+    color: #e8f4fd !important;
+    text-decoration: underline !important;
+}
+
+/* Links visitados no cabeçalho - sempre brancos */
+thead th a:visited,
+table > thead > tr > th a:visited,
+table th a:visited {
+    color: #ffffff !important;
+}
+
+/* Primeira célula do cabeçalho com borda arredondada */
+th:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+}
+
+/* Células do corpo */
+tbody td,
+table > tbody > tr > td,
+table td {
+    padding: 12px !important;
+    border-bottom: 1px solid #f0f0f0;
+    color: #2c3e50;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+/* Hover nas linhas */
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+tbody tr:hover td {
+    background-color: #f8f9fa;
+}
+
+/* Última linha sem borda inferior */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+/* Links da tabela */
+table a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+table a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Larguras específicas para colunas da tabela */
+th:nth-child(1), td:nth-child(1) { width: 5%; min-width: 50px; } /* ID */
+th:nth-child(2), td:nth-child(2) { width: 10%; min-width: 80px; } /* Imagem */
+th:nth-child(4), td:nth-child(4) { width: 10%; min-width: 100px; } /* Categoria */
+th:nth-child(5), td:nth-child(5) { width: 10%; min-width: 100px; } /* Preço */
+th:nth-child(6), td:nth-child(6) { width: 8%; min-width: 80px; } /* Estoque */
+th:nth-child(7), td:nth-child(7) { width: 10%; min-width: 90px; } /* Status */
+th:nth-child(9), td:nth-child(9) { width: 10%; min-width: 120px; } /* Ações */
+
+
+/* Responsividade da Tabela */
+@media (max-width: 800px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+     td:nth-child(8) { /* Coluna Descrição */
+        white-space: normal; /* Permite quebra de linha na descrição */
+    }
+}
+
+/* Estilos dos status de estoque */
+.status-ok { color: green; font-weight: bold; }
+.status-alerta { color: orange; font-weight: bold; }
+.status-critico { color: red; font-weight: bold; }
+
+
+/* =============================== */
+/* Página: Categorias (categorias.php) */
+/* Estilos específicos - Centralizado e Moderno */
+/* =============================== */
+
+/* Container centralizado para categorias */
+body.pagina-categorias .conteudo,
+body:has(h1:contains("Cadastro de Categorias")) .conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 5%;
+}
+
+/* Formulário de cadastro de categoria - compacto e centralizado */
+body:not(.index-filter-form) form:has(input[name="nome"]) {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/* Centralizar botão dentro do formulário de categorias */
+body:not(.index-filter-form) form:has(input[name="nome"]) input[type="submit"] {
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
+/* Título de categorias cadastradas */
+h2 {
+    text-align: center;
+    margin: 30px 0 20px 0;
+}
+
+/* Estilos dos status de categoria */
+.ativo {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.inativo {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Tabela de categorias - centralizada com espaçamento ajustado */
+table.categorias-table {
+    max-width: 70%; /* AJUSTE AQUI: 90%, 85%, 80% conforme preferir */
+    margin: 20px auto; /* AJUSTE AQUI: margem superior e inferior */
+}
+
+
+/* =============================== */
+/* Página: Catálogo (catalogo.php) */
+/* Estilos específicos */
+/* =============================== */
+
+.topo-catalogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 5%; /* Consistente com o padding do .conteudo/topo */
+}
+
+.topo-catalogo h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.btn-voltar {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 5%;
+}
+
+.btn-voltar:hover {
+    background-color: #1a252f;
+}
+
+/* Estilo do formulário de filtros no catálogo */
+form.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 5% 20px 5%; /* Ajustado para usar 5% de margem lateral */
+    max-width: none;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+form.filtros input[type="text"],
+form.filtros select,
+form.filtros button {
+    padding: 8px;
+    flex: 1;
+    margin: 0;
+}
+
+form.filtros button {
+    padding: 10px 20px;
+}
+
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 5%; /* Consistente com o padding do .conteudo */
+}
+
+.produto {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.produto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.produto h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    min-height: 48px;
+}
+
+.produto p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.produto .preco {
+    font-size: 22px;
+    font-weight: bold;
+    color: #27ae60;
+    margin-top: 10px;
+}
+
+
+/* Estilos dos status de categoria */
+.ativo {
+    color: green;
+    font-weight: bold;
+}
+
+.inativo {
+    color: red;
+    font-weight: bold;
+}
+
+/* =============================== */
+/* Página: Categorias (categorias.php) */
+/* Estilos específicos */
+/* =============================== */
+
+/* Estilos dos status de categoria */
+.ativo {
+    color: green;
+    font-weight: bold;
+}
+
+/* =============================== */
+/* Página: Catálogo (catalogo.php) */
+/* Estilos específicos */
+/* =============================== */
+
+body.pagina-catalogo {
+    font-family: "Futura", "Trebuchet MS", Arial, sans-serif; /* Lista de fontes, da mais desejada para alternativas */
+}
+
+
+.topo-catalogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    /* O padding lateral já vem do container pai .conteudo (padding: 0 5%) */
+    padding: 0; /* Removido padding: 0 5%; daqui para evitar padding duplicado */
+}
+
+.topo-catalogo h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+/* Estilo para um botão geral ou link com aparência de botão */
+.btn-geral { /* Classe usada no link "Voltar para Home" */
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Garante que padding/margin funcionem como esperado */
+}
+
+.btn-geral:hover {
+    background-color: #1a252f;
+}
+
+
+/* Estilo do formulário de filtros no catálogo */
+form.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* Margens e Padding ajustados para funcionar dentro do .conteudo */
+    margin: 0 0 20px 0; /* Margem inferior, 0 nas laterais */
+    padding: 0; /* Sem padding interno no form, pois vem do .conteudo e itens flex */
+    max-width: none;
+    box-shadow: none;
+    background-color: transparent;
+    /* Propriedades como background, box-shadow, border-radius da regra 'form' geral são sobrescritas/resetadas aqui */
+}
+
+form.filtros input[type="text"],
+form.filtros select,
+form.filtros button {
+    padding: 8px;
+    flex: 1; /* Faz os itens dividirem o espaço */
+    margin: 0; /* Remove margens padrão */
+}
+
+form.filtros button {
+    padding: 10px 20px; /* Padding do botão */
+    /* Outros estilos (background, color, etc.) vêm da regra input[type="submit"] */
+}
+
+
+.produtos { /* Container dos cards de produto no catálogo */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    /* O padding lateral já vem do container pai .conteudo (padding: 0 5%) */
+    padding: 0; /* Removido padding: 0 5%; daqui para evitar padding duplicado */
+    margin-bottom: 20px; /* Espaço abaixo da grade */
+}
+
+.produto { /* Card de produto individual no catálogo */
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.produto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.produto h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    min-height: 48px;
+}
+
+.produto p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.produto .preco {
+    font-size: 22px;
+    font-weight: bold;
+    color: #27ae60;
+    margin-top: 10px;
+}
+
+body.pagina-catalogo {
+    padding-top: 70px; /* Ajustado: apenas espaço para a barra de acessibilidade */
+}
+
+.produto .estoque-catalogo {
+    font-size: 14px; /* Tamanho da fonte */
+    color: #2c3e50; /* Cor do texto */
+    margin-top: 10px; /* Espaço acima */
+    margin-bottom: 0; /* Remover margem inferior padrão */
+    font-weight: bold;
+}
+
+
+/* =============================== */
+/* Mensagens do Sistema */
+/* Estilos para mensagens de erro ou sucesso */
+/* =============================== */
+
+.mensagem-sistema {
+    max-width: 680px;
+    width: 90%;
+    margin: 0 auto 20px auto;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.mensagem-sistema.erro {
+    color: #e74c3c;
+    background-color: #fdd;
+    border: 2px solid #e74c3c;
+}
+
+.mensagem-sistema.sucesso {
+    color: #27ae60;
+    background-color: #dfd;
+    border: 2px solid #27ae60;
+}
+
+body.pagina-editar-categoria .conteudo {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+body.pagina-editar-categoria .conteudo h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Título no dark mode - página de editar categoria */
+body.dark-mode.pagina-editar-categoria .conteudo h1 {
+    color: #ffffff !important;
+}
+
+body.pagina-editar-categoria .conteudo .mensagem-sistema {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+body.pagina-editar-categoria .conteudo form.aligned-left-form {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+body.pagina-editar-categoria .conteudo > a {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    width: auto;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+
+/* =============================== */
+/* Página: Editar Doce (editar.php) */
+/* Estilos específicos */
+/* =============================== */
+
+body.pagina-editar-doce .conteudo {
+    max-width: 800px; /* Limita largura máxima */
+    margin: 0 auto; /* Centraliza */
+    padding: 20px;
+}
+
+body.pagina-editar-doce .conteudo h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+/* Título no dark mode - página de editar */
+body.dark-mode.pagina-editar-doce .conteudo h1 {
+    color: #ffffff !important;
+}
+
+body.pagina-editar-doce .conteudo .mensagem-sistema {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+body.pagina-editar-doce .conteudo form.aligned-left-form {
+    margin: 0 auto; /* Centraliza o formulário */
+    max-width: 600px; /* Mesma largura dos outros formulários */
+}
+
+/* Link de voltar na página de editar */
+body.pagina-editar-doce .conteudo > a {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    width: auto;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* =============================== */
+/* Página: Detalhes do Produto */
+/* Visual moderno similar ao catálogo */
+/* =============================== */
+
+/* Container principal */
+.produto-detalhes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Breadcrumb - Navegação */
+.breadcrumb {
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.breadcrumb a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    margin: 0 8px;
+}
+
+.breadcrumb .atual {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Layout em Grid - Imagem + Info lado a lado */
+.produto-detalhes {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* Coluna da Imagem */
+.produto-imagem-grande {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.produto-imagem-grande img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Coluna das Informações */
+.produto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Título do Produto */
+.produto-titulo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Categoria com ícone */
+.produto-categoria {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #e3f2fd;
+    color: #1976d2;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.produto-categoria .icone {
+    font-size: 16px;
+}
+
+/* Preço em Destaque */
+.produto-preco-destaque {
+    font-size: 42px;
+    font-weight: 800;
+    color: #27ae60;
+    text-shadow: 0 2px 4px rgba(39,174,96,0.2);
+    margin: 10px 0;
+}
+
+/* Estoque */
+.produto-estoque {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    padding: 12px 0;
+    border-top: 2px solid #dee2e6;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.produto-estoque .estoque-quantidade {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Descrição */
+.produto-descricao {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.produto-descricao h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 15px 0;
+}
+
+.produto-descricao p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #495057;
+    margin: 0;
+}
+
+/* Ações - Botões */
+.produto-acoes {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-voltar-produto,
+.btn-editar-produto {
+    flex: 1;
+    padding: 14px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-voltar-produto {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(108,117,125,0.3);
+}
+
+.btn-voltar-produto:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #343a40 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(108,117,125,0.4);
+    text-decoration: none;
+}
+
+.btn-editar-produto {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(52,152,219,0.3);
+}
+
+.btn-editar-produto:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(52,152,219,0.4);
+    text-decoration: none;
+}
+
+/* Responsivo - Mobile */
+@media (max-width: 768px) {
+    .produto-detalhes {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 25px;
+    }
+    
+    .produto-titulo {
+        font-size: 26px;
+    }
+    
+    .produto-preco-destaque {
+        font-size: 34px;
+    }
+    
+    .produto-acoes {
+        flex-direction: column;
+    }
+    
+    .btn-voltar-produto,
+    .btn-editar-produto {
+        width: 100%;
+    }
+}
+
+/* =============================== */
+/* DARK MODE - Detalhes do Produto */
+/* =============================== */
+
+body.dark-mode .breadcrumb {
+    color: #adb5bd;
+}
+
+body.dark-mode .breadcrumb a {
+    color: #6db3f2;
+}
+
+body.dark-mode .breadcrumb .atual {
+    color: #e0e0e0;
+}
+
+body.dark-mode .produto-detalhes {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+}
+
+body.dark-mode .produto-imagem-grande {
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .produto-titulo {
+    color: #ffffff;
+}
+
+body.dark-mode .produto-categoria {
+    background-color: rgba(52,152,219,0.2);
+    color: #6db3f2;
+}
+
+body.dark-mode .produto-preco-destaque {
+    color: #5efc82;
+    text-shadow: 0 2px 4px rgba(94,252,130,0.3);
+}
+
+body.dark-mode .produto-estoque {
+    border-top-color: #404040;
+    border-bottom-color: #404040;
+}
+
+body.dark-mode .produto-estoque .estoque-quantidade {
+    color: #adb5bd;
+}
+
+body.dark-mode .produto-descricao {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .produto-descricao h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .produto-descricao p {
+    color: #d0d0d0;
+}
+
+body.dark-mode .btn-voltar-produto {
+    background: linear-gradient(135deg, #495057 0%, #343a40 100%);
+}
+
+body.dark-mode .btn-voltar-produto:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+}
+
+body.dark-mode .btn-editar-produto {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-editar-produto:hover {
+    background: linear-gradient(135deg, #357abd 0%, #2868a8 100%);
+    color: #ffffff !important;
+}
+
+/* =============================== */
+/* Ajustes de tamanho para acessibilidade - Preço e Título */
+/* =============================== */
+
+/* Preço - Tamanho normal - 42px */
+.produto-preco-destaque {
+    font-size: 42px !important;
+}
+
+/* Preço - Tamanho pequeno - 85% de 42px = ~36px */
+body.font-pequeno .produto-preco-destaque {
+    font-size: 36px !important;
+}
+
+/* Preço - Tamanho grande - 120% de 42px = ~50px */
+body.font-grande .produto-preco-destaque {
+    font-size: 50px !important;
+}
+
+/* Preço - Tamanho extra grande - 140% de 42px = ~59px */
+body.font-extragrande .produto-preco-destaque {
+    font-size: 59px !important;
+}
+
+/* Título - Tamanho normal - 32px */
+.produto-titulo {
+    font-size: 32px !important;
+}
+
+/* Título - Tamanho pequeno - 85% de 32px = ~27px */
+body.font-pequeno .produto-titulo {
+    font-size: 27px !important;
+}
+
+/* Título - Tamanho grande - 120% de 32px = ~38px */
+body.font-grande .produto-titulo {
+    font-size: 38px !important;
+}
+
+/* Título - Tamanho extra grande - 140% de 32px = ~45px */
+body.font-extragrande .produto-titulo {
+    font-size: 45px !important;
+}

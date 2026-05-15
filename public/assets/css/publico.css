@@ -1,0 +1,335 @@
+/* =============================== */
+/* ESTILOS PARA CABEÇALHO PÚBLICO */
+/* Usado em páginas sem autenticação */
+/* =============================== */
+
+/* Botão de Login/Área Administrativa */
+.btn-login-publico {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #e74c3c;
+    color: white !important;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login-publico:hover {
+    background-color: #c0392b;
+    text-decoration: none;
+}
+
+/* Ajuste para o ícone no título do cabeçalho público */
+.topo .titulo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* =============================== */
+/* ESTILOS DO CATÁLOGO PÚBLICO */
+/* =============================== */
+
+/* Subtítulo do catálogo */
+.subtitulo-catalogo {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 16px;
+    margin-top: -15px;
+    margin-bottom: 25px;
+    display: block;
+    width: 100%;
+}
+
+/* Formulário de filtros do catálogo */
+form.catalogo-filter-form {
+    max-width: 600px;
+    margin: 20px auto 30px auto;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: none;
+}
+
+/* Título automático do formulário */
+.catalogo-filter-form::before {
+    content: '🔍 Filtrar Produtos';
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #3498db;
+}
+
+/* Form rows */
+.catalogo-filter-form .form-row {
+    margin-bottom: 15px;
+}
+
+.catalogo-filter-form .form-row label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Inputs e selects */
+.catalogo-filter-form input[type="text"],
+.catalogo-filter-form input[type="number"],
+.catalogo-filter-form select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.catalogo-filter-form input[type="text"]:focus,
+.catalogo-filter-form input[type="number"]:focus,
+.catalogo-filter-form select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52,152,219,0.1);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+/* Linha horizontal para preços */
+.catalogo-filter-form .linha-horizontal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.catalogo-filter-form .linha-horizontal > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.catalogo-filter-form .linha-horizontal label {
+    margin-bottom: 6px;
+}
+
+/* Botões do formulário */
+.catalogo-filter-form .form-buttons-row {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.catalogo-filter-form input[type="submit"] {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(52,152,219,0.3);
+    transition: all 0.3s ease;
+}
+
+.catalogo-filter-form input[type="submit"]:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(52,152,219,0.4);
+}
+
+.catalogo-filter-form a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 26px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    background-color: rgba(231,76,60,0.1);
+}
+
+.catalogo-filter-form a:hover {
+    background-color: rgba(231,76,60,0.2);
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+/* Contador de resultados */
+.contador-resultados {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+.contador-resultados p {
+    background: linear-gradient(135deg, #ecf0f1 0%, #d5dbdb 100%);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #2c3e50;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.contador-resultados strong {
+    color: #3498db;
+    font-size: 17px;
+}
+
+/* Mensagem quando não há produtos */
+.produtos > p {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    color: #7f8c8d;
+    font-size: 16px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* =============================== */
+/* HOVER NOS CARDS DE PRODUTOS */
+/* =============================== */
+
+.produto {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.produto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+.produto img {
+    transition: transform 0.3s ease;
+}
+
+.produto:hover img {
+    transform: scale(1.05);
+}
+
+/* Ajuste do preço para responder ao sistema de acessibilidade */
+.produto .preco {
+    font-size: 1.375em !important; /* 22px equivalente em em (22/16 = 1.375) */
+}
+
+/* Ajustes adicionais para outros elementos do card */
+.produto h2 {
+    font-size: 1.125em !important; /* 18px equivalente */
+}
+
+.produto p {
+    font-size: 0.875em !important; /* 14px equivalente */
+}
+
+.produto .estoque-catalogo {
+    font-size: 0.875em !important; /* 14px equivalente */
+}
+
+/* =============================== */
+/* DARK MODE - Ajustes para público */
+/* =============================== */
+
+body.dark-mode .btn-login-publico {
+    background-color: #e74c3c;
+}
+
+body.dark-mode .btn-login-publico:hover {
+    background-color: #c0392b;
+}
+
+body.dark-mode .subtitulo-catalogo {
+    color: #d0d0d0;
+}
+
+/* Formulário de filtros - Dark Mode igual às outras páginas */
+body.dark-mode form.catalogo-filter-form {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .catalogo-filter-form::before {
+    color: #ffffff;
+    border-bottom-color: #4a90e2;
+}
+
+body.dark-mode .catalogo-filter-form .form-row label {
+    color: #e0e0e0;
+}
+
+body.dark-mode .catalogo-filter-form input[type="text"],
+body.dark-mode .catalogo-filter-form input[type="number"],
+body.dark-mode .catalogo-filter-form select {
+    background-color: #3a3a3a;
+    border-color: #505050;
+    color: #e0e0e0;
+}
+
+body.dark-mode .catalogo-filter-form input[type="text"]::placeholder,
+body.dark-mode .catalogo-filter-form input[type="number"]::placeholder {
+    color: #7a7a7a;
+}
+
+body.dark-mode .catalogo-filter-form input[type="text"]:focus,
+body.dark-mode .catalogo-filter-form input[type="number"]:focus,
+body.dark-mode .catalogo-filter-form select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74,144,226,0.2);
+}
+
+body.dark-mode .catalogo-filter-form .form-buttons-row {
+    border-top-color: #404040;
+}
+
+body.dark-mode .catalogo-filter-form input[type="submit"] {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    box-shadow: 0 4px 10px rgba(74,144,226,0.4);
+}
+
+body.dark-mode .catalogo-filter-form input[type="submit"]:hover {
+    background: linear-gradient(135deg, #357abd 0%, #2868a8 100%);
+    box-shadow: 0 6px 14px rgba(74,144,226,0.5);
+}
+
+body.dark-mode .catalogo-filter-form a {
+    color: #ff6b6b;
+    background-color: rgba(231,76,60,0.2);
+}
+
+body.dark-mode .catalogo-filter-form a:hover {
+    background-color: rgba(231,76,60,0.3);
+}
+
+/* Contador de resultados - Dark Mode */
+body.dark-mode .contador-resultados p {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+    color: #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .contador-resultados strong {
+    color: #6db3f2;
+}
+
+/* Mensagem de produtos vazios - Dark Mode */
+body.dark-mode .produtos > p {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+    color: #d0d0d0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Hover nos cards - Dark Mode */
+body.dark-mode .produto:hover {
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.8);
+}

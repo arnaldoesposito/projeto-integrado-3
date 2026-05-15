@@ -1,0 +1,781 @@
+/* ======================================== */
+/* SISTEMA DE ACESSIBILIDADE */
+/* Barra de controles + Dark Mode + Fontes */
+/* ======================================== */
+
+/* ============================================ */
+/* BARRA DE ACESSIBILIDADE */
+/* ============================================ */
+
+.barra-acessibilidade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 12px 0;
+    z-index: 1100; /* Acima do header principal */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.barra-acessibilidade-conteudo {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Botões da barra de acessibilidade */
+.btn-acessibilidade {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: 1px solid #ced4da;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-acessibilidade:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+    transform: translateY(-1px);
+}
+
+.btn-acessibilidade:active {
+    transform: translateY(0);
+}
+
+.btn-acessibilidade.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-acessibilidade.disabled:hover {
+    background-color: #ffffff;
+    transform: none;
+}
+
+/* Botão de Dark Mode - destaque */
+#btn-dark-mode {
+    background-color: #2c3e50;
+    color: #ffffff;
+    border-color: #2c3e50;
+}
+
+#btn-dark-mode:hover {
+    background-color: #1a252f;
+    border-color: #1a252f;
+}
+
+/* Separador visual entre grupos de botões */
+.separador-acessibilidade {
+    width: 1px;
+    height: 24px;
+    background-color: #dee2e6;
+    margin: 0 5px;
+}
+
+
+/* ============================================ */
+/* AJUSTE DO BODY PARA A BARRA */
+/* ============================================ */
+
+/* Aumenta o padding-top para dar espaço à barra */
+body {
+    padding-top: 180px; /* 60px (barra) + 120px (header) */
+    transition: background-color 0.3s ease, color 0.3s ease, padding-top 0.3s ease;
+}
+
+/* Ajustar padding-top dinamicamente com o tamanho da fonte */
+body.font-pequeno {
+    padding-top: 165px; /* Menor */
+}
+
+body.font-grande {
+    padding-top: 195px; /* Maior */
+}
+
+body.font-extragrande {
+    padding-top: 215px; /* Muito maior */
+}
+
+/* Páginas sem header (login, catálogo) */
+body.pagina-catalogo {
+    padding-top: 70px; /* Apenas a barra de acessibilidade */
+}
+
+body.login {
+    padding-top: 0; /* Login usa flex center, não precisa de padding-top */
+}
+
+body.pagina-catalogo.font-pequeno {
+    padding-top: 65px;
+}
+
+body.pagina-catalogo.font-grande {
+    padding-top: 80px;
+}
+
+body.pagina-catalogo.font-extragrande {
+    padding-top: 90px;
+}
+
+
+/* ============================================ */
+/* DARK MODE - ESTILOS */
+/* ============================================ */
+
+/* Quando o body tem a classe 'dark-mode' */
+body.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+/* Barra de acessibilidade no dark mode */
+body.dark-mode .barra-acessibilidade {
+    background-color: #2d2d2d;
+    border-bottom-color: #404040;
+}
+
+body.dark-mode .btn-acessibilidade {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    border-color: #505050;
+}
+
+body.dark-mode .btn-acessibilidade:hover {
+    background-color: #4a4a4a;
+    border-color: #606060;
+}
+
+body.dark-mode #btn-dark-mode {
+    background-color: #ffa500;
+    color: #1a1a1a;
+    border-color: #ffa500;
+}
+
+body.dark-mode #btn-dark-mode:hover {
+    background-color: #ff8c00;
+    border-color: #ff8c00;
+}
+
+body.dark-mode .separador-acessibilidade {
+    background-color: #505050;
+}
+
+/* Header no dark mode */
+body.dark-mode .topo {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    box-shadow: 0px 4px 16px rgba(0,0,0,0.8);
+    border-bottom-color: #4a90e2; /* Borda azul mais clara */
+}
+
+body.dark-mode .topo .titulo {
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+body.dark-mode .menu a {
+    color: #d0d0d0;
+}
+
+body.dark-mode .menu a:hover {
+    color: #4a90e2; /* Azul mais claro */
+    background-color: rgba(74,144,226,0.1);
+}
+
+
+/* Conteúdo principal */
+body.dark-mode .conteudo {
+    color: #e0e0e0;
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+    color: #f5f5f5;
+}
+
+body.dark-mode a {
+    color: #6db3f2;
+}
+
+body.dark-mode a:hover {
+    color: #8cc5f5;
+}
+
+/* Formulários no dark mode */
+body.dark-mode form {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="number"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"],
+body.dark-mode input[type="file"],
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    border-color: #505050;
+}
+
+body.dark-mode input[type="text"]:focus,
+body.dark-mode input[type="number"]:focus,
+body.dark-mode input[type="email"]:focus,
+body.dark-mode input[type="password"]:focus,
+body.dark-mode input[type="file"]:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74,144,226,0.2);
+    outline: none;
+}
+
+body.dark-mode label {
+    color: #e0e0e0;
+}
+
+/* Botões submit no dark mode */
+body.dark-mode input[type="submit"],
+body.dark-mode button[type="submit"] {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(74,144,226,0.4);
+}
+
+body.dark-mode input[type="submit"]:hover,
+body.dark-mode button[type="submit"]:hover {
+    background: linear-gradient(135deg, #357abd 0%, #2868a8 100%);
+    box-shadow: 0 6px 14px rgba(74,144,226,0.5);
+}
+
+/* Links voltar no dark mode */
+body.dark-mode a.btn-voltar,
+body.dark-mode .conteudo > a:not(table a) {
+    background-color: #495057;
+    color: #ffffff;
+}
+
+body.dark-mode a.btn-voltar:hover,
+body.dark-mode .conteudo > a:not(table a):hover {
+    background-color: #5a6268;
+}
+
+/* Filtros do Index no dark mode - Colorido */
+body.dark-mode form.index-filter-form {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .index-filter-form::before {
+    color: #ffffff;
+    border-bottom-color: #4a90e2;
+}
+
+body.dark-mode .index-filter-form .form-row label {
+    color: #e0e0e0;
+}
+
+body.dark-mode .index-filter-form input[type="text"],
+body.dark-mode .index-filter-form input[type="number"],
+body.dark-mode .index-filter-form select {
+    background-color: #3a3a3a;
+    border-color: #505050;
+    color: #e0e0e0;
+}
+
+body.dark-mode .index-filter-form input[type="text"]:focus,
+body.dark-mode .index-filter-form input[type="number"]:focus,
+body.dark-mode .index-filter-form select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74,144,226,0.2);
+}
+
+body.dark-mode .index-filter-form input::placeholder {
+    color: #7a7a7a;
+}
+
+body.dark-mode .index-filter-form .form-buttons-row {
+    border-top-color: #404040;
+}
+
+body.dark-mode .index-filter-form input[type="submit"] {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    box-shadow: 0 4px 10px rgba(74,144,226,0.4);
+}
+
+body.dark-mode .index-filter-form input[type="submit"]:hover {
+    background: linear-gradient(135deg, #357abd 0%, #2868a8 100%);
+    box-shadow: 0 6px 14px rgba(74,144,226,0.5);
+}
+
+body.dark-mode .index-filter-form a {
+    background-color: rgba(231,76,60,0.2);
+    color: #ff6b6b;
+}
+
+body.dark-mode .index-filter-form a:hover {
+    background-color: rgba(231,76,60,0.3);
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="number"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"],
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    border-color: #505050;
+}
+
+body.dark-mode input[type="text"]:focus,
+body.dark-mode input[type="number"]:focus,
+body.dark-mode input[type="email"]:focus,
+body.dark-mode input[type="password"]:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+    border-color: #6db3f2;
+    outline: none;
+}
+
+body.dark-mode label {
+    color: #e0e0e0;
+}
+
+/* Botões submit no dark mode */
+body.dark-mode input[type="submit"],
+body.dark-mode button[type="submit"] {
+    background-color: #4a90e2;
+    color: #ffffff;
+}
+
+body.dark-mode input[type="submit"]:hover,
+body.dark-mode button[type="submit"]:hover {
+    background-color: #357abd;
+}
+
+/* Tabelas no dark mode */
+body.dark-mode table {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark-mode thead th,
+body.dark-mode table > thead > tr > th,
+body.dark-mode table th {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important;
+    color: #ffffff !important;
+}
+
+/* Links no cabeçalho - dark mode */
+body.dark-mode thead th a,
+body.dark-mode table > thead > tr > th a,
+body.dark-mode table th a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+body.dark-mode thead th a:hover,
+body.dark-mode table > thead > tr > th a:hover,
+body.dark-mode table th a:hover {
+    color: #e8f4fd !important;
+}
+
+body.dark-mode thead th a:visited,
+body.dark-mode table > thead > tr > th a:visited,
+body.dark-mode table th a:visited {
+    color: #ffffff !important;
+}
+
+body.dark-mode tbody td,
+body.dark-mode table > tbody > tr > td,
+body.dark-mode table td {
+    border-bottom-color: #404040;
+    color: #e0e0e0;
+    background-color: #2d2d2d;
+}
+
+body.dark-mode tbody tr:hover {
+    background-color: #3a3a3a;
+}
+
+body.dark-mode tbody tr:hover td {
+    background-color: #3a3a3a;
+}
+
+body.dark-mode table a {
+    color: #6db3f2;
+}
+
+body.dark-mode table a:hover {
+    color: #8cc5f5;
+}
+
+/* Cards de produtos (catálogo) no dark mode */
+body.dark-mode .produto {
+    background-color: #1e1e1e; /* Mais escuro */
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.6);
+    border: 1px solid #333; /* Borda sutil */
+}
+
+body.dark-mode .produto h2 {
+    color: #ffffff; /* Branco puro para melhor contraste */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .produto p {
+    color: #d0d0d0; /* Cinza claro */
+}
+
+body.dark-mode .produto .preco {
+    color: #5efc82; /* Verde mais claro e vibrante */
+    text-shadow: 0 0 10px rgba(94,252,130,0.3); /* Brilho no preço */
+}
+
+/* Categoria no catálogo dark mode */
+body.dark-mode .produto p strong {
+    color: #3498db; /* Azul para destaque */
+}
+
+/* Estoque no catálogo dark mode */
+body.dark-mode .produto .estoque-catalogo {
+    color: #e0e0e0;
+    background-color: #2d2d2d;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+
+/* Mensagens do sistema no dark mode */
+body.dark-mode .mensagem-sistema.erro {
+    background-color: #3d1a1a;
+    border-color: #e74c3c;
+    color: #ff6b6b;
+}
+
+body.dark-mode .mensagem-sistema.sucesso {
+    background-color: #1a3d1a;
+    border-color: #27ae60;
+    color: #51cf66;
+}
+
+/* Status de estoque no dark mode */
+body.dark-mode .status-ok {
+    color: #51cf66;
+}
+
+body.dark-mode .status-alerta {
+    color: #ffd43b;
+}
+
+body.dark-mode .status-critico {
+    color: #ff6b6b;
+}
+
+/* Login container no dark mode */
+/* Login no dark mode */
+body.dark-mode.login {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .login-box {
+    background-color: #2d2d2d;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.7);
+    border-color: #404040;
+}
+
+body.dark-mode .login-box h1 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .login-subtitulo {
+    color: #95a5a6;
+    border-bottom-color: #404040;
+}
+
+body.dark-mode .login-form label {
+    color: #e0e0e0;
+}
+
+body.dark-mode .login-form input[type="email"],
+body.dark-mode .login-form input[type="password"] {
+    background-color: #3a3a3a;
+    border-color: #505050;
+    color: #e0e0e0;
+}
+
+body.dark-mode .login-form input[type="email"]:focus,
+body.dark-mode .login-form input[type="password"]:focus {
+    border-color: #4a90e2;
+    background-color: #3a3a3a;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+body.dark-mode .link-voltar {
+    border-top-color: #404040;
+    color: #6db3f2;
+}
+
+body.dark-mode .link-voltar:hover {
+    color: #8cc5f5;
+}
+
+body.dark-mode .login-erro {
+    background-color: #3d1a1a;
+    border-color: #e74c3c;
+    color: #ff6b6b;
+}
+
+body.dark-mode .erro {
+    color: #ff6b6b;
+}
+
+/* Botão "Sair" no dark mode */
+body.dark-mode .usuario a.sair {
+    background-color: #c92a2a;
+}
+
+body.dark-mode .usuario a.sair:hover {
+    background-color: #a61e1e;
+}
+
+/* Botões gerais no dark mode */
+body.dark-mode .btn-geral {
+    background: linear-gradient(135deg, #495057 0%, #343a40 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+    border: 1px solid #6c757d;
+}
+
+body.dark-mode .btn-geral:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+    border-color: #adb5bd;
+}
+
+/* Botão de buscar no catálogo */
+body.dark-mode form.filtros button {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 3px 8px rgba(74,144,226,0.4);
+}
+
+body.dark-mode form.filtros button:hover {
+    background: linear-gradient(135deg, #357abd 0%, #2868a8 100%);
+    transform: translateY(-2px);
+}
+
+
+
+/* ============================================ */
+/* TAMANHOS DE FONTE */
+/* ============================================ */
+
+/* Define tamanho base no HTML para as porcentagens funcionarem */
+html {
+    font-size: 16px; /* Tamanho base padrão */
+}
+
+/* Fonte Pequena (85%) */
+body.font-pequeno {
+    font-size: 85% !important;
+}
+
+body.font-pequeno *,
+body.font-pequeno input,
+body.font-pequeno select,
+body.font-pequeno textarea,
+body.font-pequeno button {
+    font-size: inherit !important;
+}
+
+body.font-pequeno input::placeholder,
+body.font-pequeno textarea::placeholder {
+    font-size: inherit !important;
+}
+
+/* Fonte Normal (100% - padrão) */
+body.font-normal {
+    font-size: 100% !important;
+}
+
+/* Fonte Grande (120%) */
+body.font-grande {
+    font-size: 120% !important;
+}
+
+body.font-grande *,
+body.font-grande input,
+body.font-grande select,
+body.font-grande textarea,
+body.font-grande button {
+    font-size: inherit !important;
+}
+
+body.font-grande input::placeholder,
+body.font-grande textarea::placeholder {
+    font-size: inherit !important;
+}
+
+/* Fonte Extra Grande (140%) */
+body.font-extragrande {
+    font-size: 140% !important;
+}
+
+body.font-extragrande *,
+body.font-extragrande input,
+body.font-extragrande select,
+body.font-extragrande textarea,
+body.font-extragrande button {
+    font-size: inherit !important;
+}
+
+body.font-extragrande input::placeholder,
+body.font-extragrande textarea::placeholder {
+    font-size: inherit !important;
+}
+
+/* Ajustes específicos para manter proporções do título */
+body.font-pequeno .topo .titulo {
+    font-size: 22px !important;
+}
+
+body.font-grande .topo .titulo {
+    font-size: 30px !important;
+}
+
+body.font-extragrande .topo .titulo {
+    font-size: 34px !important;
+}
+
+/* Ajustes específicos para o LOGIN - Título e Subtítulo */
+/* Estes elementos precisam responder ao sistema de acessibilidade */
+
+/* Tamanho PEQUENO */
+body.font-pequeno .login-box h1 {
+    font-size: 22px !important;
+}
+
+body.font-pequeno .login-subtitulo {
+    font-size: 12px !important;
+}
+
+/* Tamanho GRANDE */
+body.font-grande .login-box h1 {
+    font-size: 31px !important;
+}
+
+body.font-grande .login-subtitulo {
+    font-size: 17px !important;
+}
+
+/* Tamanho EXTRA GRANDE */
+body.font-extragrande .login-box h1 {
+    font-size: 36px !important;
+}
+
+body.font-extragrande .login-subtitulo {
+    font-size: 20px !important;
+}
+
+/* Ajustes para H1 e H2 do conteúdo (páginas de cadastro, edição, etc) */
+
+/* Tamanho PEQUENO */
+body.font-pequeno .conteudo h1,
+body.font-pequeno h1 {
+    font-size: 24px !important;
+}
+
+body.font-pequeno .conteudo h2,
+body.font-pequeno h2 {
+    font-size: 19px !important;
+}
+
+/* Tamanho GRANDE */
+body.font-grande .conteudo h1,
+body.font-grande h1 {
+    font-size: 34px !important;
+}
+
+body.font-grande .conteudo h2,
+body.font-grande h2 {
+    font-size: 26px !important;
+}
+
+/* Tamanho EXTRA GRANDE */
+body.font-extragrande .conteudo h1,
+body.font-extragrande h1 {
+    font-size: 39px !important;
+}
+
+body.font-extragrande .conteudo h2,
+body.font-extragrande h2 {
+    font-size: 31px !important;
+}
+
+
+/* ============================================ */
+/* RESPONSIVO - Barra de Acessibilidade */
+/* ============================================ */
+
+@media (max-width: 600px) {
+    .barra-acessibilidade-conteudo {
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .btn-acessibilidade {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    
+    .separador-acessibilidade {
+        display: none; /* Esconde separadores em mobile */
+    }
+    
+    /* Ajusta padding do body em mobile */
+    body {
+        padding-top: 220px; /* Mais espaço pois a barra e header quebram em múltiplas linhas */
+    }
+    
+    body.pagina-catalogo {
+        padding-top: 100px;
+    }
+    
+    body.login {
+        padding-top: 0; /* Login mantém centralização via flex */
+    }
+}
+
+@media (max-width: 400px) {
+    /* Em telas muito pequenas, empilha os botões */
+    .barra-acessibilidade-conteudo {
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .btn-acessibilidade {
+        width: 100%;
+        text-align: center;
+    }
+}
