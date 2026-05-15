@@ -88,7 +88,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         <button type="submit" class="btn-entrar">Entrar no Sistema</button>
     </form>
-    
+
+    <div class="login-divisor">
+        <span>ou</span>
+    </div>
+
+    <a href="cadastrar_usuario.php" class="btn-cadastrar">Criar conta</a>
+
     <a href="catalogo.php" class="link-voltar">← Voltar para o Catálogo</a>
 </div>
 
