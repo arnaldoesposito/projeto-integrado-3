@@ -976,54 +976,11 @@ form.filtros button {
 }
 
 
-/* Estilos dos status de categoria */
-.ativo {
-    color: green;
-    font-weight: bold;
-}
-
-.inativo {
-    color: red;
-    font-weight: bold;
-}
-
-/* =============================== */
-/* Página: Categorias (categorias.php) */
-/* Estilos específicos */
-/* =============================== */
-
-/* Estilos dos status de categoria */
-.ativo {
-    color: green;
-    font-weight: bold;
-}
-
-/* =============================== */
-/* Página: Catálogo (catalogo.php) */
-/* Estilos específicos */
-/* =============================== */
-
 body.pagina-catalogo {
-    font-family: "Futura", "Trebuchet MS", Arial, sans-serif; /* Lista de fontes, da mais desejada para alternativas */
+    padding-top: 70px;
 }
 
-
-.topo-catalogo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    /* O padding lateral já vem do container pai .conteudo (padding: 0 5%) */
-    padding: 0; /* Removido padding: 0 5%; daqui para evitar padding duplicado */
-}
-
-.topo-catalogo h1 {
-    margin: 0;
-    font-size: 26px;
-}
-
-/* Estilo para um botão geral ou link com aparência de botão */
-.btn-geral { /* Classe usada no link "Voltar para Home" */
+.btn-geral {
     background-color: #2c3e50;
     color: #fff;
     padding: 10px 20px;
@@ -1031,98 +988,11 @@ body.pagina-catalogo {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    display: inline-block; /* Garante que padding/margin funcionem como esperado */
+    display: inline-block;
 }
 
 .btn-geral:hover {
     background-color: #1a252f;
-}
-
-
-/* Estilo do formulário de filtros no catálogo */
-form.filtros {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    /* Margens e Padding ajustados para funcionar dentro do .conteudo */
-    margin: 0 0 20px 0; /* Margem inferior, 0 nas laterais */
-    padding: 0; /* Sem padding interno no form, pois vem do .conteudo e itens flex */
-    max-width: none;
-    box-shadow: none;
-    background-color: transparent;
-    /* Propriedades como background, box-shadow, border-radius da regra 'form' geral são sobrescritas/resetadas aqui */
-}
-
-form.filtros input[type="text"],
-form.filtros select,
-form.filtros button {
-    padding: 8px;
-    flex: 1; /* Faz os itens dividirem o espaço */
-    margin: 0; /* Remove margens padrão */
-}
-
-form.filtros button {
-    padding: 10px 20px; /* Padding do botão */
-    /* Outros estilos (background, color, etc.) vêm da regra input[type="submit"] */
-}
-
-
-.produtos { /* Container dos cards de produto no catálogo */
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    /* O padding lateral já vem do container pai .conteudo (padding: 0 5%) */
-    padding: 0; /* Removido padding: 0 5%; daqui para evitar padding duplicado */
-    margin-bottom: 20px; /* Espaço abaixo da grade */
-}
-
-.produto { /* Card de produto individual no catálogo */
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.produto img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 15px;
-}
-
-.produto h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    min-height: 48px;
-}
-
-.produto p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.produto .preco {
-    font-size: 22px;
-    font-weight: bold;
-    color: #27ae60;
-    margin-top: 10px;
-}
-
-body.pagina-catalogo {
-    padding-top: 70px; /* Ajustado: apenas espaço para a barra de acessibilidade */
-}
-
-.produto .estoque-catalogo {
-    font-size: 14px; /* Tamanho da fonte */
-    color: #2c3e50; /* Cor do texto */
-    margin-top: 10px; /* Espaço acima */
-    margin-bottom: 0; /* Remover margem inferior padrão */
-    font-weight: bold;
 }
 
 
