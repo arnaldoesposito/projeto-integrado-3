@@ -84,14 +84,6 @@ function gerar_link_ordem($coluna, $texto, $ordem_atual, $direcao_atual) {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Consulta de Doces</title>
-</head>
-<body>
-
 <form method="GET" class="index-filter-form">
     <div class="filter-row-1">
         <div class="form-field">
@@ -194,5 +186,7 @@ function gerar_link_ordem($coluna, $texto, $ordem_atual, $direcao_atual) {
     </tr>
     <?php } ?>
 </table>
+
+</div> <!-- fecha .conteudo -->
 
 <?php include __DIR__ . '/../src/rodape.php'; ?>
