@@ -850,9 +850,24 @@ h2 {
 
 /* Tabela de categorias - centralizada com espaçamento ajustado */
 table.categorias-table {
-    max-width: 70%; /* AJUSTE AQUI: 90%, 85%, 80% conforme preferir */
-    margin: 20px auto; /* AJUSTE AQUI: margem superior e inferior */
+    max-width: 70%;
+    margin: 20px auto;
 }
+
+table.categorias-table th:nth-child(1),
+table.categorias-table td:nth-child(1) { width: 6%; }   /* ID */
+
+table.categorias-table th:nth-child(2),
+table.categorias-table td:nth-child(2) { width: 40%; }  /* Nome */
+
+table.categorias-table th:nth-child(3),
+table.categorias-table td:nth-child(3) { width: 14%; }  /* Qtd Produtos */
+
+table.categorias-table th:nth-child(4),
+table.categorias-table td:nth-child(4) { width: 20%; }  /* Status */
+
+table.categorias-table th:nth-child(5),
+table.categorias-table td:nth-child(5) { width: 20%; }  /* Ações */
 
 
 /* =============================== */

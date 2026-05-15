@@ -217,8 +217,9 @@ body.dark-mode a:hover {
 
 /* Formulários no dark mode */
 body.dark-mode form {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 
 body.dark-mode input[type="text"],
@@ -275,10 +276,11 @@ body.dark-mode .conteudo > a:not(table a):hover {
     background-color: #5a6268;
 }
 
-/* Filtros do Index no dark mode - Colorido */
+/* Filtros do Index no dark mode */
 body.dark-mode form.index-filter-form {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 
 body.dark-mode .index-filter-form::before {
@@ -371,8 +373,9 @@ body.dark-mode button[type="submit"]:hover {
 
 /* Tabelas no dark mode */
 body.dark-mode table {
-    background-color: #2d2d2d;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    background-color: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 
 body.dark-mode thead th,
@@ -405,17 +408,17 @@ body.dark-mode table th a:visited {
 body.dark-mode tbody td,
 body.dark-mode table > tbody > tr > td,
 body.dark-mode table td {
-    border-bottom-color: #404040;
-    color: #e0e0e0;
-    background-color: #2d2d2d;
+    border-bottom-color: #334155;
+    color: #cbd5e1;
+    background-color: #1e293b;
 }
 
 body.dark-mode tbody tr:hover {
-    background-color: #3a3a3a;
+    background-color: #263548;
 }
 
 body.dark-mode tbody tr:hover td {
-    background-color: #3a3a3a;
+    background-color: #263548;
 }
 
 body.dark-mode table a {
@@ -548,11 +551,78 @@ body.dark-mode .erro {
 
 /* Botão "Sair" no dark mode */
 body.dark-mode .usuario a.sair {
-    background-color: #c92a2a;
+    background: transparent;
+    color: #94a3b8;
+    border-color: #475569;
 }
 
 body.dark-mode .usuario a.sair:hover {
-    background-color: #a61e1e;
+    background: rgba(239,68,68,0.15);
+    color: #f87171;
+    border-color: rgba(239,68,68,0.4);
+}
+
+/* ============================================ */
+/* DASHBOARD — DARK MODE                        */
+/* ============================================ */
+
+body.dark-mode .db-card {
+    background: #1e293b;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .db-card-valor {
+    color: #f1f5f9;
+}
+
+body.dark-mode .db-card-label {
+    color: #64748b;
+}
+
+body.dark-mode .grafico-box {
+    background: #1e293b;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .grafico-box h2 {
+    color: #94a3b8;
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .dashboard-alertas {
+    background: #1e293b;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .dashboard-alertas h2 {
+    color: #94a3b8;
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .tabela-alertas th,
+body.dark-mode .tabela-comp th {
+    background: #263548 !important;
+    color: #94a3b8 !important;
+    border-bottom-color: #334155 !important;
+}
+
+body.dark-mode .tabela-alertas td,
+body.dark-mode .tabela-comp td {
+    color: #cbd5e1;
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .tabela-alertas tr:hover td,
+body.dark-mode .tabela-comp tr:hover td {
+    background: #263548;
+}
+
+body.dark-mode .barra-track {
+    background: #334155;
+}
+
+body.dark-mode .dashboard-titulo {
+    color: #f1f5f9;
 }
 
 /* Botões gerais no dark mode */
